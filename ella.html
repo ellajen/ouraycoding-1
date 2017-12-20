@@ -27,7 +27,7 @@
 <h1 class="bye blackwhite">Bye
 </h1>
 
-<h1 class="Hi Bye">Hi, Bye
+<h1 id="header" class="Hi Bye">Hi, Bye</h1>
 
 <p>
 Ella.html
@@ -74,6 +74,28 @@ Ella.html
     </div>
   </div>
 </div>
+
+<h1 id="invisible">Make Invisible</h1>
+
+<script type="text/javascript">
+
+var headerElement = document.getElementById("header");
+
+function partyTime() {
+  headerElement.innerHTML += " Party!";
+}
+
+headerElement.addEventListener("click", partyTime);
+
+var invisibleElement = document.getElementById("invisible");
+function hideIt() {
+  invisibleElement.style.visibility = "hidden";
+}
+
+invisibleElement.addEventListener("click", hideIt);
+
+</script>
+
 </body>
 
 
