@@ -77,24 +77,62 @@ Ella.html
 
 <h1 id="invisible">Make Invisible</h1>
 
-<script type="text/javascript">
+<p id="screen">
+</p>
+<div>
+<button id="b1">
+1
+</button>
+<button id="b2">
+2
+</button>
+<button id="b3">
+3
+</button>
+<div>
+  <button id="b4">
+  4
+  </button>
+  <button id="b5">
+  5
+  </button>
+  <button id="b6">
+  6
+  </button>
+</div>
 
-var headerElement = document.getElementById("header");
+<div>
+  <button id="b7">
+  7
+  </button>
+  <button id="b8">
+  8
+  </button>
+  <button id="b9">
+  9
+  </button>
+</div>
+<div>
+  <button id="b0">
+  0
+  </button>
 
-function partyTime() {
-  headerElement.innerHTML += " Party!";
-}
+</div>
+<div>
+  <button id="plus">
+  +
+  </button>
+  <button id="minus">
+  -
+  </button>
+  <button id="equals">
+  =
+  </button>
+</div>
 
-headerElement.addEventListener("click", partyTime);
+</div>
 
-var invisibleElement = document.getElementById("invisible");
-function hideIt() {
-  invisibleElement.style.visibility = "hidden";
-}
-
-invisibleElement.addEventListener("click", hideIt);
-
-</script>
+<script type="text/javascript" src="script.js"></script>
 
 </body>
 
