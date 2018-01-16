@@ -27,6 +27,12 @@ function add(a, b) {
 function subtract(a, b){
   return a - b;
 }
+function divide(a, b){
+  return a / b;
+}
+function times(a, b){
+  return a * b;
+}
 
 function addNumberToScreen(number) {
   screen.innerHTML += number;
@@ -65,20 +71,39 @@ document.getElementById("b0").addEventListener("click", function() {
   addNumberToScreen(0);
 });
 document.getElementById("plus").addEventListener("click", function() {
-  //save current number
+  //save operation
+  operation = add;
   firstNumber = screen.innerHTML;
   //clear the screen
   screen.innerHTML = "";
 });
 document.getElementById("minus").addEventListener("click", function() {
-  //will do this later
+  //save operation
+  operation = subtract;
+  firstNumber = screen.innerHTML;
+  screen.innerHTML = "";
+});
+document.getElementById("divide").addEventListener("click", function() {
+  //save operation
+  operation = divide;
+  firstNumber = screen.innerHTML;
+  screen.innerHTML = "";
+});
+document.getElementById("times").addEventListener("click", function() {
+  //save operation
+  operation = times;
+  firstNumber = screen.innerHTML;
+  screen.innerHTML = "";
 });
 document.getElementById("equals").addEventListener("click", function() {
   //get the current number
   var currentNumber = screen.innerHTML;
-  //get the first number
-  //add the two together
-  var result = parseInt(currentNumber) + parseInt(firstNumber);
+
+  // operate on the two numbers the "add" or 'subtract' function (whichever is assigned to 'operation')
+  var firstNumberInteger = parseInt(firstNumber);
+  var currentNumberInteger = parseInt(currentNumber);
+  var result = operation(firstNumberInteger, currentNumberInteger);
+
   //show result on screen
   screen.innerHTML = result;
 });
