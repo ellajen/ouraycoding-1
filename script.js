@@ -105,14 +105,27 @@ var lastMove = 'X';
 for (var i = 0; i < allTics.length; i += 1) {
   var tic = allTics[i]; //get the current tic from our list
   tic.addEventListener("click", function() {
-      var currentMove;
-      if (lastMove === 'X') {
-          currentMove = 'O';
-      } else {
-          currentMove = 'X';
-      }
 
-      this.innerHTML = currentMove;
-      lastMove = currentMove;
+      var canMove = this.innerHTML !== 'X' && this.innerHTML !== 'O';
+
+      if (canMove) {
+
+        var currentMove;
+        if (lastMove === 'X') {
+            currentMove = 'O';
+        } else {
+            currentMove = 'X';
+        }
+
+        this.innerHTML = currentMove;
+        lastMove = currentMove;
+
+        //Clear message
+        document.getElementById("game-message").innerHTML = "";
+
+      } else {
+        document.getElementById("game-message").innerHTML = "You can't move there!";
+        console.log("Somebody is in that spot!");
+      }
   });
 }
