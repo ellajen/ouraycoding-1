@@ -35,6 +35,9 @@ function times(a, b){
 }
 
 function addNumberToScreen(number) {
+  if (screen.innerHTML.trim() === '0') {
+      screen.innerHTML = '';
+  }
   screen.innerHTML += number;
 }
 
@@ -75,6 +78,7 @@ document.getElementById("times").addEventListener("click", function() {
   firstNumber = screen.innerHTML;
   screen.innerHTML = "";
 });
+
 document.getElementById("equals").addEventListener("click", function() {
   //get the current number
   var currentNumber = screen.innerHTML;
@@ -86,6 +90,10 @@ document.getElementById("equals").addEventListener("click", function() {
 
   //show result on screen
   screen.innerHTML = result;
+});
+
+document.getElementById("clear").addEventListener("click", function() {
+   screen.innerHTML = '0';
 });
 
 //      indexes: 0  1  2  3     4        5    6
@@ -121,7 +129,7 @@ for (var i = 0; i < allTics.length; i += 1) {
         lastMove = currentMove;
 
         //Clear message
-        document.getElementById("game-message").innerHTML = "";
+        document.getElementById("game-message").innerHTML = " ";
 
       } else {
         document.getElementById("game-message").innerHTML = "You can't move there!";
